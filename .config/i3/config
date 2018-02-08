@@ -14,6 +14,8 @@ set $mod Mod4
 new_window pixel 3
 new_float normal 2
 
+exec --no-startup-id compton --config ~/.config/compton.conf -b
+
 assign [class="Pidgin" window_role="buddy_list"] 1
 
 for_window [class="Pidgin" window_role="buddy_list"] resize shrink width 0px or 30 ppt
@@ -24,9 +26,9 @@ for_window [title="Blender:Anim"] floating enable border normal 2 move position 
 for_window [class="Gpicview"] floating enable border normal 2 move position center
 for_window [class="rdesktop"] floating disable border pixel 3
 
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/hachmeisterk/.config/i3/workspace-1.json'"
-exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/hachmeisterk/.config/i3/workspace-2.json'"
 exec --no-startup-id "i3-msg 'workspace 3; append_layout /home/hachmeisterk/.config/i3/workspace-3.json'"
+exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/hachmeisterk/.config/i3/workspace-2.json'"
+exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/hachmeisterk/.config/i3/workspace-1.json'"
 
 exec --no-startup-id xrandr --output HDMI1 --primary --auto --left-of HDMI2
 #exec --no-startup-id xsetroot -solid "#002244"
@@ -184,6 +186,7 @@ bindsym $mod+r mode "resize"
 bar {
   font pango:Droid Sans Mono, FontAwesome 10
   status_command i3status
+#  status_command i3blocks
   position top
   tray_output HDMI1
 
@@ -213,9 +216,9 @@ client.background       #ffffff
 
 workspace 1 output HDMI1
 workspace 2 output HDMI2
+workspace 3 output HDMI1
 
 exec --no-startup-id pidgin
-#exec --no-startup-id kate
 exec --no-startup-id atom
 exec --no-startup-id google-chrome
 exec --no-startup-id mate-terminal

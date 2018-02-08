@@ -10,7 +10,7 @@ general {
 order += "ethernet eno1"
 order += "cpu_usage 0"
 order += "cpu_temperature 0"
-order += "disk /home"
+order += "disk /"
 order += "volume master"
 order += "tztime local"
 
@@ -29,7 +29,7 @@ cpu_temperature 0 {
   max_threshold = 95
 }
 
-disk "/home" {
+disk "/" {
   format = " %free"
   prefix_type = custom
   low_threshold = 5
