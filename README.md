@@ -1,6 +1,11 @@
-Dotfiles for i3
-===============
+# i3 dotfiles
 
-This repository contains dotfiles to use with i3.
+My dotfiles repository uses [dotfiler](https://github.com/svetlyak40wt/dotfiler).
 
-I use [dotfiler](https://github.com/svetlyak40wt/dotfiler) to organize my dotfiles.
+### Install
+
+```
+cd ~/.dotfiles
+bin/dot add git@github.com:hachmeister/dot-i3.git
+bin/dot update
+```
